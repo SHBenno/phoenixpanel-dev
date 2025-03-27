@@ -46,6 +46,9 @@ class CustomEncryptionServiceProvider extends ServiceProvider
                             public function encryptString(string $value): string { return ''; }
                             public function decryptString(string $payload): string { return ''; }
                             public function getKey(): string { return 'dummy-key-'.bin2hex(random_bytes(16)); } // Return a dummy key string
+                            // Add missing methods required by the interface
+                            public function getAllKeys(): array { return []; }
+                            public function getPreviousKeys(): array { return []; }
                         };
                     });
 
