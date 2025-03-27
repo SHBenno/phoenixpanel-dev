@@ -2,19 +2,23 @@
 
 namespace PhoenixPanel\Providers;
 
-use Illuminate\Contracts\Encryption\DecryptException;
-use Illuminate\Contracts\Encryption\Encrypter as EncrypterContract;
 use Illuminate\Encryption\Encrypter;
-use Illuminate\Encryption\MissingAppKeyException;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputDefinition;
-use Symfony\Component\Console\Input\InputOption;
+// Potentially add: use Illuminate\Support\Facades\Log; // If logging is desired
 
 class CustomEncryptionServiceProvider extends ServiceProvider
 {
+    /**
+     * Commands that are allowed to run without an initial APP_KEY.
+     * A temporary key will be generated for these commands if APP_KEY is missing.
+     */
+    protected array $allowedCommands = [
+        'key:generate',
+        'package:discover',
+        'migrate',
+        // Add 'config:clear', 'config:cache' if they are also run by composer and need this
+    ];
+
     /**
      * Register the service provider.
      *
@@ -22,34 +26,35 @@ class CustomEncryptionServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app->runningInConsole()) {
-            global $argv;
-            $command = $argv[1] ?? null;
-        
-            // Skip encrypter registration for 'key:generate' and potentially 'composer' commands
-            if ($command === 'key:generate' || strpos($_SERVER['SCRIPT_FILENAME'], 'composer') !== false) {
-                // Register a dummy encrypter
-                $this->app->singleton('encrypter', function ($app) {
-                    return new class implements EncrypterContract {
-                        public function encrypt($value, $serialize = true) { return ''; }
-                        public function encryptString($value) { return ''; }
-                        public function decrypt($payload, $unserialize = true) { return ''; }
-                        public function decryptString($payload) { return ''; }
-                        public function getKey() { return Str::random(32); }
-                        public function getCipher() { return 'dummy-cipher'; }
-                        public function getAllKeys() { return []; }
-                        public function getPreviousKeys() { return []; }
-                    };
-                });
-                return;
+        // Check if running in console, APP_KEY is missing
+        if ($this->app->runningInConsole() && empty(config('app.key'))) {
+            // Access argv safely; index 1 should contain the command name
+            $command = $_SERVER['argv'][1] ?? null;
+
+            // Check if the command is one that needs the temporary key
+            if ($command && in_array($command, $this->allowedCommands)) {
+                // Generate a temporary, valid key for the current request lifecycle
+                // using the application's configured cipher.
+                try {
+                    $tempKey = 'base64:'.base64_encode(Encrypter::generateKey(config('app.cipher')));
+                    config(['app.key' => $tempKey]);
+
+                    // Optional: Log that a temporary key was generated for debugging
+                    // \Illuminate\Support\Facades\Log::debug('Temporary APP_KEY generated for console command: ' . $command);
+                } catch (\Exception $e) {
+                    // Log error if key generation fails for some reason
+                    // \Illuminate\Support\Facades\Log::error('Failed to generate temporary APP_KEY: ' . $e->getMessage());
+                    // Allow the process to continue; the default MissingAppKeyException will likely be thrown later.
+                }
             }
         }
-    
-        // Register the actual encrypter for normal application use
-        $this->app->singleton('encrypter', function ($app) {
-            $config = $app->make('config')->get('app');
-            return new Encrypter($this->parseKey($config), $config['cipher']);
-        });
+
+        // No need to register 'encrypter' here.
+        // The default Illuminate\Encryption\EncryptionServiceProvider will run later.
+        // It will use config('app.key'), which will be the temporary key if we set it,
+        // or the original (empty or real) value otherwise.
+        // If the key is still missing for a command *not* in $allowedCommands,
+        // the default provider will correctly throw MissingAppKeyException.
     }
 
     /**
@@ -59,44 +64,8 @@ class CustomEncryptionServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // No boot logic needed for this modification
     }
 
-    /**
-     * Parse the encryption key.
-     *
-     * @param  array  $config
-     * @return string
-     *
-     * @throws \Illuminate\Encryption\MissingAppKeyException
-     */
-    protected function parseKey(array $config)
-    {
-        if ($this->app->runningInConsole()) {
-            global $argv;
-            if (isset($argv[1]) && $argv[1] === 'key:generate') {
-                return '';
-            }
-        }
-
-        if ($key = $config['key']) {
-            return $key;
-        }
-
-        throw new MissingAppKeyException;
-    }
-
-    /**
-     * Check if the current console command is 'key:generate'.
-     *
-     * @return bool
-     */
-    protected function isKeyGenerateCommand()
-    {
-        if ($this->app->has('artisan.input')) {
-            $input = $this->app->make('artisan.input');
-            return $input->getFirstArgument() === 'key:generate';
-        }
-        return false;
-    }
+    // Removed the old parseKey and isKeyGenerateCommand methods
 }
