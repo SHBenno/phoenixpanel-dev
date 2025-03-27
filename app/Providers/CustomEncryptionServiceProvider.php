@@ -24,24 +24,28 @@ class CustomEncryptionServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             global $argv;
-            if (isset($argv[1]) && $argv[1] === 'key:generate') {
-                // Register a dummy encrypter for key:generate
+            $command = $argv[1] ?? null;
+        
+            // Skip encrypter registration for 'key:generate' and potentially 'composer' commands
+            if ($command === 'key:generate' || strpos($_SERVER['SCRIPT_FILENAME'], 'composer') !== false) {
+                // Register a dummy encrypter
                 $this->app->singleton('encrypter', function ($app) {
                     return new class implements EncrypterContract {
                         public function encrypt($value, $serialize = true) { return ''; }
                         public function encryptString($value) { return ''; }
                         public function decrypt($payload, $unserialize = true) { return ''; }
                         public function decryptString($payload) { return ''; }
-                        public function getKey() { return Str::random(32); } // Return a dummy key
+                        public function getKey() { return Str::random(32); }
                         public function getCipher() { return 'dummy-cipher'; }
-                        public function getAllKeys() { return []; } // Implement getAllKeys
-                        public function getPreviousKeys() { return []; } // Implement getPreviousKeys
+                        public function getAllKeys() { return []; }
+                        public function getPreviousKeys() { return []; }
                     };
                 });
                 return;
             }
         }
     
+        // Register the actual encrypter for normal application use
         $this->app->singleton('encrypter', function ($app) {
             $config = $app->make('config')->get('app');
             return new Encrypter($this->parseKey($config), $config['cipher']);
