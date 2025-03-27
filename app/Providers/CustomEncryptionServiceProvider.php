@@ -36,8 +36,14 @@ class CustomEncryptionServiceProvider extends ServiceProvider
                 // Generate a temporary, valid key for the current request lifecycle
                 // using the application's configured cipher.
                 try {
-                    $tempKey = 'base64:'.base64_encode(Encrypter::generateKey(config('app.cipher')));
-                    config(['app.key' => $tempKey]);
+                    $cipher = config('app.cipher'); // Get cipher from config
+                    $tempKey = 'base64:'.base64_encode(Encrypter::generateKey($cipher));
+                    config(['app.key' => $tempKey]); // Set temporary key in config
+
+                    // Explicitly register encrypter with the temporary key
+                    $this->app->singleton('encrypter', function ($app) use ($tempKey, $cipher) {
+                        return new Encrypter($tempKey, $cipher);
+                    });
 
                     // Optional: Log that a temporary key was generated for debugging
                     // \Illuminate\Support\Facades\Log::debug('Temporary APP_KEY generated for console command: ' . $command);
