@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Api\Client\Account;
+namespace PhoenixPanel\Http\Requests\Api\Client\Account;
 
-use Pterodactyl\Models\User;
+use PhoenixPanel\Models\User;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Hashing\Hasher;
-use Pterodactyl\Http\Requests\Api\Client\ClientApiRequest;
-use Pterodactyl\Exceptions\Http\Base\InvalidPasswordProvidedException;
+use PhoenixPanel\Http\Requests\Api\Client\ClientApiRequest;
+use PhoenixPanel\Exceptions\Http\Base\InvalidPasswordProvidedException;
 
 class UpdateEmailRequest extends ClientApiRequest
 {

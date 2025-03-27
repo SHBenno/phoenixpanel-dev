@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Exceptions\Http\Base;
+namespace PhoenixPanel\Exceptions\Http\Base;
 
-use Pterodactyl\Exceptions\DisplayException;
+use PhoenixPanel\Exceptions\DisplayException;
 
 class InvalidPasswordProvidedException extends DisplayException
 {

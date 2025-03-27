@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Providers;
+namespace PhoenixPanel\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Pterodactyl\Http\ViewComposers\AssetComposer;
+use PhoenixPanel\Http\ViewComposers\AssetComposer;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {

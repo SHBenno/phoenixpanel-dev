@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Api\Client\Servers;
+namespace PhoenixPanel\Http\Controllers\Api\Client\Servers;
 
-use Pterodactyl\Models\Server;
-use Pterodactyl\Transformers\Api\Client\ServerTransformer;
-use Pterodactyl\Services\Servers\GetUserPermissionsService;
-use Pterodactyl\Http\Controllers\Api\Client\ClientApiController;
-use Pterodactyl\Http\Requests\Api\Client\Servers\GetServerRequest;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Transformers\Api\Client\ServerTransformer;
+use PhoenixPanel\Services\Servers\GetUserPermissionsService;
+use PhoenixPanel\Http\Controllers\Api\Client\ClientApiController;
+use PhoenixPanel\Http\Requests\Api\Client\Servers\GetServerRequest;
 
 class ServerController extends ClientApiController
 {

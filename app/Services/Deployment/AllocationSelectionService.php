@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Services\Deployment;
+namespace PhoenixPanel\Services\Deployment;
 
-use Pterodactyl\Models\Allocation;
-use Pterodactyl\Exceptions\DisplayException;
-use Pterodactyl\Services\Allocations\AssignmentService;
-use Pterodactyl\Contracts\Repository\AllocationRepositoryInterface;
-use Pterodactyl\Exceptions\Service\Deployment\NoViableAllocationException;
+use PhoenixPanel\Models\Allocation;
+use PhoenixPanel\Exceptions\DisplayException;
+use PhoenixPanel\Services\Allocations\AssignmentService;
+use PhoenixPanel\Contracts\Repository\AllocationRepositoryInterface;
+use PhoenixPanel\Exceptions\Service\Deployment\NoViableAllocationException;
 
 class AllocationSelectionService
 {

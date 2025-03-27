@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Admin;
+namespace PhoenixPanel\Http\Requests\Admin;
 
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Models\Server;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
 

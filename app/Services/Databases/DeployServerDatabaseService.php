@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Services\Databases;
+namespace PhoenixPanel\Services\Databases;
 
 use Webmozart\Assert\Assert;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Database;
-use Pterodactyl\Models\DatabaseHost;
-use Pterodactyl\Exceptions\Service\Database\NoSuitableDatabaseHostException;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Database;
+use PhoenixPanel\Models\DatabaseHost;
+use PhoenixPanel\Exceptions\Service\Database\NoSuitableDatabaseHostException;
 
 class DeployServerDatabaseService
 {
@@ -19,8 +19,8 @@ class DeployServerDatabaseService
 
     /**
      * @throws \Throwable
-     * @throws \Pterodactyl\Exceptions\Service\Database\TooManyDatabasesException
-     * @throws \Pterodactyl\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException
+     * @throws \PhoenixPanel\Exceptions\Service\Database\TooManyDatabasesException
+     * @throws \PhoenixPanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException
      */
     public function handle(Server $server, array $data): Database
     {
@@ -33,7 +33,7 @@ class DeployServerDatabaseService
         } else {
             $nodeHosts = $hosts->where('node_id', $server->node_id)->toBase();
 
-            if ($nodeHosts->isEmpty() && !config('pterodactyl.client_features.databases.allow_random')) {
+            if ($nodeHosts->isEmpty() && !config('phoenixpanel.client_features.databases.allow_random')) {
                 throw new NoSuitableDatabaseHostException();
             }
         }

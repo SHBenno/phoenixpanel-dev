@@ -1,11 +1,11 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin;
+namespace PhoenixPanel\Http\Controllers\Admin;
 
 use Illuminate\View\View;
 use Illuminate\View\Factory as ViewFactory;
-use Pterodactyl\Http\Controllers\Controller;
-use Pterodactyl\Services\Helpers\SoftwareVersionService;
+use PhoenixPanel\Http\Controllers\Controller;
+use PhoenixPanel\Services\Helpers\SoftwareVersionService;
 
 class BaseController extends Controller
 {

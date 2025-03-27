@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Transformers\Api\Client;
+namespace PhoenixPanel\Transformers\Api\Client;
 
-use Pterodactyl\Models\Task;
-use Pterodactyl\Models\Schedule;
+use PhoenixPanel\Models\Task;
+use PhoenixPanel\Models\Schedule;
 use League\Fractal\Resource\Collection;
 
 class ScheduleTransformer extends BaseClientTransformer
@@ -45,7 +45,7 @@ class ScheduleTransformer extends BaseClientTransformer
     /**
      * Allows attaching the tasks specific to the schedule in the response.
      *
-     * @throws \Pterodactyl\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \PhoenixPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeTasks(Schedule $model): Collection
     {

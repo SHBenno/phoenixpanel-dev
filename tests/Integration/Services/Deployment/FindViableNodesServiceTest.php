@@ -1,15 +1,15 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Services\Deployment;
+namespace PhoenixPanel\Tests\Integration\Services\Deployment;
 
-use Pterodactyl\Models\Node;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Database;
-use Pterodactyl\Models\Location;
+use PhoenixPanel\Models\Node;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Database;
+use PhoenixPanel\Models\Location;
 use Illuminate\Support\Collection;
-use Pterodactyl\Tests\Integration\IntegrationTestCase;
-use Pterodactyl\Services\Deployment\FindViableNodesService;
-use Pterodactyl\Exceptions\Service\Deployment\NoViableNodeException;
+use PhoenixPanel\Tests\Integration\IntegrationTestCase;
+use PhoenixPanel\Services\Deployment\FindViableNodesService;
+use PhoenixPanel\Exceptions\Service\Deployment\NoViableNodeException;
 
 class FindViableNodesServiceTest extends IntegrationTestCase
 {
@@ -41,7 +41,7 @@ class FindViableNodesServiceTest extends IntegrationTestCase
     /**
      * Ensure that errors are not thrown back when passing in expected values.
      *
-     * @see https://github.com/pterodactyl/panel/issues/2529
+     * @see https://github.com/phoenixpanel/panel/issues/2529
      */
     public function testNoExceptionIsThrownIfStringifiedIntegersArePassedForLocations()
     {
@@ -68,10 +68,10 @@ class FindViableNodesServiceTest extends IntegrationTestCase
 
     public function testExpectedNodeIsReturnedForLocation()
     {
-        /** @var \Pterodactyl\Models\Location[] $locations */
+        /** @var \PhoenixPanel\Models\Location[] $locations */
         $locations = Location::factory()->times(2)->create();
 
-        /** @var \Pterodactyl\Models\Node[] $nodes */
+        /** @var \PhoenixPanel\Models\Node[] $nodes */
         $nodes = [
             // This node should never be returned once we've completed the initial test which
             // runs without a location filter.

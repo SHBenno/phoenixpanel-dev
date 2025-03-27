@@ -1,21 +1,21 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\Settings;
+namespace PhoenixPanel\Http\Controllers\Admin\Settings;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Contracts\Console\Kernel;
-use Pterodactyl\Notifications\MailTested;
+use PhoenixPanel\Notifications\MailTested;
 use Illuminate\View\Factory as ViewFactory;
 use Illuminate\Support\Facades\Notification;
-use Pterodactyl\Exceptions\DisplayException;
-use Pterodactyl\Http\Controllers\Controller;
+use PhoenixPanel\Exceptions\DisplayException;
+use PhoenixPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\Encryption\Encrypter;
-use Pterodactyl\Providers\SettingsServiceProvider;
+use PhoenixPanel\Providers\SettingsServiceProvider;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
-use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
-use Pterodactyl\Http\Requests\Admin\Settings\MailSettingsFormRequest;
+use PhoenixPanel\Contracts\Repository\SettingsRepositoryInterface;
+use PhoenixPanel\Http\Requests\Admin\Settings\MailSettingsFormRequest;
 
 class MailController extends Controller
 {
@@ -46,8 +46,8 @@ class MailController extends Controller
      * Handle request to update SMTP mail settings.
      *
      * @throws DisplayException
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(MailSettingsFormRequest $request): Response
     {

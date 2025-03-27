@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Events\Server;
+namespace PhoenixPanel\Events\Server;
 
-use Pterodactyl\Events\Event;
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Events\Event;
+use PhoenixPanel\Models\Server;
 use Illuminate\Queue\SerializesModels;
 
 class Saving extends Event

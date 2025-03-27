@@ -1,11 +1,11 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Api\Application\Servers;
+namespace PhoenixPanel\Http\Controllers\Api\Application\Servers;
 
-use Pterodactyl\Models\Server;
-use Pterodactyl\Transformers\Api\Application\ServerTransformer;
-use Pterodactyl\Http\Controllers\Api\Application\ApplicationApiController;
-use Pterodactyl\Http\Requests\Api\Application\Servers\GetExternalServerRequest;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Transformers\Api\Application\ServerTransformer;
+use PhoenixPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use PhoenixPanel\Http\Requests\Api\Application\Servers\GetExternalServerRequest;
 
 class ExternalServerController extends ApplicationApiController
 {

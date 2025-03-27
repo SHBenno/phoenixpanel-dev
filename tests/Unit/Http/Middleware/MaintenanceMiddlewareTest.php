@@ -1,14 +1,14 @@
 <?php
 
-namespace Pterodactyl\Tests\Unit\Http\Middleware;
+namespace PhoenixPanel\Tests\Unit\Http\Middleware;
 
 use Mockery as m;
 use Mockery\MockInterface;
-use Pterodactyl\Models\Node;
+use PhoenixPanel\Models\Node;
 use Illuminate\Http\Response;
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Models\Server;
 use Illuminate\Contracts\Routing\ResponseFactory;
-use Pterodactyl\Http\Middleware\MaintenanceMiddleware;
+use PhoenixPanel\Http\Middleware\MaintenanceMiddleware;
 
 class MaintenanceMiddlewareTest extends MiddlewareTestCase
 {

@@ -1,21 +1,21 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Api\Client\Servers;
+namespace PhoenixPanel\Http\Controllers\Api\Client\Servers;
 
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use Pterodactyl\Facades\Activity;
-use Pterodactyl\Models\Allocation;
-use Pterodactyl\Exceptions\DisplayException;
-use Pterodactyl\Repositories\Eloquent\ServerRepository;
-use Pterodactyl\Transformers\Api\Client\AllocationTransformer;
-use Pterodactyl\Http\Controllers\Api\Client\ClientApiController;
-use Pterodactyl\Services\Allocations\FindAssignableAllocationService;
-use Pterodactyl\Http\Requests\Api\Client\Servers\Network\GetNetworkRequest;
-use Pterodactyl\Http\Requests\Api\Client\Servers\Network\NewAllocationRequest;
-use Pterodactyl\Http\Requests\Api\Client\Servers\Network\DeleteAllocationRequest;
-use Pterodactyl\Http\Requests\Api\Client\Servers\Network\UpdateAllocationRequest;
-use Pterodactyl\Http\Requests\Api\Client\Servers\Network\SetPrimaryAllocationRequest;
+use PhoenixPanel\Facades\Activity;
+use PhoenixPanel\Models\Allocation;
+use PhoenixPanel\Exceptions\DisplayException;
+use PhoenixPanel\Repositories\Eloquent\ServerRepository;
+use PhoenixPanel\Transformers\Api\Client\AllocationTransformer;
+use PhoenixPanel\Http\Controllers\Api\Client\ClientApiController;
+use PhoenixPanel\Services\Allocations\FindAssignableAllocationService;
+use PhoenixPanel\Http\Requests\Api\Client\Servers\Network\GetNetworkRequest;
+use PhoenixPanel\Http\Requests\Api\Client\Servers\Network\NewAllocationRequest;
+use PhoenixPanel\Http\Requests\Api\Client\Servers\Network\DeleteAllocationRequest;
+use PhoenixPanel\Http\Requests\Api\Client\Servers\Network\UpdateAllocationRequest;
+use PhoenixPanel\Http\Requests\Api\Client\Servers\Network\SetPrimaryAllocationRequest;
 
 class NetworkAllocationController extends ClientApiController
 {
@@ -43,8 +43,8 @@ class NetworkAllocationController extends ClientApiController
     /**
      * Set the primary allocation for a server.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UpdateAllocationRequest $request, Server $server, Allocation $allocation): array
     {
@@ -67,8 +67,8 @@ class NetworkAllocationController extends ClientApiController
     /**
      * Set the primary allocation for a server.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function setPrimary(SetPrimaryAllocationRequest $request, Server $server, Allocation $allocation): array
     {

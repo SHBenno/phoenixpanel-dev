@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Exceptions\Service;
+namespace PhoenixPanel\Exceptions\Service;
 
-use Pterodactyl\Exceptions\DisplayException;
+use PhoenixPanel\Exceptions\DisplayException;
 
 class ServiceLimitExceededException extends DisplayException
 {

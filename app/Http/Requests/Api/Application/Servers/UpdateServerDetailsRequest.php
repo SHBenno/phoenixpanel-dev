@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Api\Application\Servers;
+namespace PhoenixPanel\Http\Requests\Api\Application\Servers;
 
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Models\Server;
 
 class UpdateServerDetailsRequest extends ServerWriteRequest
 {

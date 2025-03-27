@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Policies;
+namespace PhoenixPanel\Policies;
 
-use Pterodactyl\Models\User;
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Models\User;
+use PhoenixPanel\Models\Server;
 
 class ServerPolicy
 {

@@ -1,16 +1,16 @@
 <?php
 
-namespace Pterodactyl\Services\Nodes;
+namespace PhoenixPanel\Services\Nodes;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Str;
-use Pterodactyl\Models\Node;
-use Pterodactyl\Models\User;
+use PhoenixPanel\Models\Node;
+use PhoenixPanel\Models\User;
 use Lcobucci\JWT\Token\Plain;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Signer\Key\InMemory;
-use Pterodactyl\Extensions\Lcobucci\JWT\Encoding\TimestampDates;
+use PhoenixPanel\Extensions\Lcobucci\JWT\Encoding\TimestampDates;
 
 class NodeJWTService
 {

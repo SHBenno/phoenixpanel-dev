@@ -1,11 +1,11 @@
 <?php
 
-namespace Pterodactyl\Transformers\Api\Client;
+namespace PhoenixPanel\Transformers\Api\Client;
 
-use Pterodactyl\Models\User;
+use PhoenixPanel\Models\User;
 use Webmozart\Assert\Assert;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Transformers\Api\Application\BaseTransformer as BaseApplicationTransformer;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Transformers\Api\Application\BaseTransformer as BaseApplicationTransformer;
 
 abstract class BaseClientTransformer extends BaseApplicationTransformer
 {

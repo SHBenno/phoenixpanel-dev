@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Services\Nodes;
+namespace PhoenixPanel\Services\Nodes;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Str;
-use Pterodactyl\Models\Node;
+use PhoenixPanel\Models\Node;
 use Illuminate\Contracts\Encryption\Encrypter;
-use Pterodactyl\Contracts\Repository\NodeRepositoryInterface;
+use PhoenixPanel\Contracts\Repository\NodeRepositoryInterface;
 
 class NodeCreationService
 {
@@ -20,7 +20,7 @@ class NodeCreationService
     /**
      * Create a new node on the panel.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
      */
     public function handle(array $data): Node
     {

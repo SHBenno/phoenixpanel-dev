@@ -1,11 +1,11 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Api\Client\Server\Schedule;
+namespace PhoenixPanel\Tests\Integration\Api\Client\Server\Schedule;
 
-use Pterodactyl\Models\Schedule;
-use Pterodactyl\Helpers\Utilities;
-use Pterodactyl\Models\Permission;
-use Pterodactyl\Tests\Integration\Api\Client\ClientApiIntegrationTestCase;
+use PhoenixPanel\Models\Schedule;
+use PhoenixPanel\Helpers\Utilities;
+use PhoenixPanel\Models\Permission;
+use PhoenixPanel\Tests\Integration\Api\Client\ClientApiIntegrationTestCase;
 
 class UpdateServerScheduleTest extends ClientApiIntegrationTestCase
 {
@@ -82,7 +82,7 @@ class UpdateServerScheduleTest extends ClientApiIntegrationTestCase
      * Test that the "is_processing" field gets reset to false when the schedule is enabled
      * or disabled so that an invalid state can be more easily fixed.
      *
-     * @see https://github.com/pterodactyl/panel/issues/2425
+     * @see https://github.com/phoenixpanel/panel/issues/2425
      */
     public function testScheduleIsProcessingIsSetToFalseWhenActiveStateChanges()
     {

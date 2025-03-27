@@ -1,17 +1,17 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\Nests;
+namespace PhoenixPanel\Http\Controllers\Admin\Nests;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use Pterodactyl\Http\Controllers\Controller;
-use Pterodactyl\Services\Nests\NestUpdateService;
-use Pterodactyl\Services\Nests\NestCreationService;
-use Pterodactyl\Services\Nests\NestDeletionService;
-use Pterodactyl\Contracts\Repository\NestRepositoryInterface;
-use Pterodactyl\Http\Requests\Admin\Nest\StoreNestFormRequest;
+use PhoenixPanel\Http\Controllers\Controller;
+use PhoenixPanel\Services\Nests\NestUpdateService;
+use PhoenixPanel\Services\Nests\NestCreationService;
+use PhoenixPanel\Services\Nests\NestDeletionService;
+use PhoenixPanel\Contracts\Repository\NestRepositoryInterface;
+use PhoenixPanel\Http\Requests\Admin\Nest\StoreNestFormRequest;
 
 class NestController extends Controller
 {
@@ -31,7 +31,7 @@ class NestController extends Controller
     /**
      * Render nest listing page.
      *
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function index(): View
     {
@@ -51,7 +51,7 @@ class NestController extends Controller
     /**
      * Handle the storage of a new nest.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
      */
     public function store(StoreNestFormRequest $request): RedirectResponse
     {
@@ -64,7 +64,7 @@ class NestController extends Controller
     /**
      * Return details about a nest including all the eggs and servers per egg.
      *
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function view(int $nest): View
     {
@@ -76,8 +76,8 @@ class NestController extends Controller
     /**
      * Handle request to update a nest.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(StoreNestFormRequest $request, int $nest): RedirectResponse
     {
@@ -90,7 +90,7 @@ class NestController extends Controller
     /**
      * Handle request to delete a nest.
      *
-     * @throws \Pterodactyl\Exceptions\Service\HasActiveServersException
+     * @throws \PhoenixPanel\Exceptions\Service\HasActiveServersException
      */
     public function destroy(int $nest): RedirectResponse
     {

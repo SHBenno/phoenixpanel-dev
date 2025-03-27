@@ -1,10 +1,10 @@
 <?php
 
-namespace Pterodactyl\Http\Middleware\Activity;
+namespace PhoenixPanel\Http\Middleware\Activity;
 
 use Illuminate\Http\Request;
-use Pterodactyl\Models\ApiKey;
-use Pterodactyl\Facades\LogTarget;
+use PhoenixPanel\Models\ApiKey;
+use PhoenixPanel\Facades\LogTarget;
 
 class TrackAPIKey
 {

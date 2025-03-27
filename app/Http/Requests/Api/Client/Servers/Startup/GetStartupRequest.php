@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Api\Client\Servers\Startup;
+namespace PhoenixPanel\Http\Requests\Api\Client\Servers\Startup;
 
-use Pterodactyl\Models\Permission;
-use Pterodactyl\Http\Requests\Api\Client\ClientApiRequest;
+use PhoenixPanel\Models\Permission;
+use PhoenixPanel\Http\Requests\Api\Client\ClientApiRequest;
 
 class GetStartupRequest extends ClientApiRequest
 {

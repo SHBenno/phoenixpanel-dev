@@ -1,16 +1,16 @@
 <?php
 
-namespace Pterodactyl\Services\Servers;
+namespace PhoenixPanel\Services\Servers;
 
 use Illuminate\Support\Arr;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Allocation;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Allocation;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\ConnectionInterface;
-use Pterodactyl\Exceptions\DisplayException;
+use PhoenixPanel\Exceptions\DisplayException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Pterodactyl\Repositories\Wings\DaemonServerRepository;
-use Pterodactyl\Exceptions\Http\Connection\DaemonConnectionException;
+use PhoenixPanel\Repositories\Wings\DaemonServerRepository;
+use PhoenixPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class BuildModificationService
 {

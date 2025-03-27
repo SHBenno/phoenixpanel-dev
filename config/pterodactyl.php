@@ -20,7 +20,7 @@ return [
     |
     | Each panel installation is assigned a unique UUID to identify the
     | author of custom services, and make upgrades easier by identifying
-    | standard Pterodactyl shipped services.
+    | standard PhoenixPanel shipped services.
     */
 
     'service' => [
@@ -92,7 +92,7 @@ return [
 
     'cdn' => [
         'cache_time' => 60,
-        'url' => 'https://cdn.pterodactyl.io/releases/latest.json',
+        'url' => 'https://cdn.phoenixpanel.io/releases/latest.json',
     ],
 
     /*
@@ -183,7 +183,7 @@ return [
     | Telemetry Settings
     |--------------------------------------------------------------------------
     |
-    | This section controls the telemetry sent by Pterodactyl.
+    | This section controls the telemetry sent by PhoenixPanel.
     */
 
     'telemetry' => [

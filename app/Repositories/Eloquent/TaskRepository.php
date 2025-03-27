@@ -1,11 +1,11 @@
 <?php
 
-namespace Pterodactyl\Repositories\Eloquent;
+namespace PhoenixPanel\Repositories\Eloquent;
 
-use Pterodactyl\Models\Task;
+use PhoenixPanel\Models\Task;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Pterodactyl\Contracts\Repository\TaskRepositoryInterface;
-use Pterodactyl\Exceptions\Repository\RecordNotFoundException;
+use PhoenixPanel\Contracts\Repository\TaskRepositoryInterface;
+use PhoenixPanel\Exceptions\Repository\RecordNotFoundException;
 
 class TaskRepository extends EloquentRepository implements TaskRepositoryInterface
 {

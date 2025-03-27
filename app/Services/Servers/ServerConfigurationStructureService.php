@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Services\Servers;
+namespace PhoenixPanel\Services\Servers;
 
-use Pterodactyl\Models\Mount;
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Models\Mount;
+use PhoenixPanel\Models\Server;
 
 class ServerConfigurationStructureService
 {

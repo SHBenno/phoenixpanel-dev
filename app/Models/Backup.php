@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Models;
+namespace PhoenixPanel\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property \Carbon\CarbonImmutable $updated_at
  * @property \Carbon\CarbonImmutable|null $deleted_at
  * @property Server $server
- * @property \Pterodactyl\Models\AuditLog[] $audits
+ * @property \PhoenixPanel\Models\AuditLog[] $audits
  */
 class Backup extends Model
 {

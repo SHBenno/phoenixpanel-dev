@@ -1,16 +1,16 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Services\Databases;
+namespace PhoenixPanel\Tests\Integration\Services\Databases;
 
 use Mockery\MockInterface;
-use Pterodactyl\Models\Database;
-use Pterodactyl\Models\DatabaseHost;
-use Pterodactyl\Tests\Integration\IntegrationTestCase;
-use Pterodactyl\Repositories\Eloquent\DatabaseRepository;
-use Pterodactyl\Services\Databases\DatabaseManagementService;
-use Pterodactyl\Exceptions\Repository\DuplicateDatabaseNameException;
-use Pterodactyl\Exceptions\Service\Database\TooManyDatabasesException;
-use Pterodactyl\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException;
+use PhoenixPanel\Models\Database;
+use PhoenixPanel\Models\DatabaseHost;
+use PhoenixPanel\Tests\Integration\IntegrationTestCase;
+use PhoenixPanel\Repositories\Eloquent\DatabaseRepository;
+use PhoenixPanel\Services\Databases\DatabaseManagementService;
+use PhoenixPanel\Exceptions\Repository\DuplicateDatabaseNameException;
+use PhoenixPanel\Exceptions\Service\Database\TooManyDatabasesException;
+use PhoenixPanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException;
 
 class DatabaseManagementServiceTest extends IntegrationTestCase
 {
@@ -23,7 +23,7 @@ class DatabaseManagementServiceTest extends IntegrationTestCase
     {
         parent::setUp();
 
-        config()->set('pterodactyl.client_features.databases.enabled', true);
+        config()->set('phoenixpanel.client_features.databases.enabled', true);
 
         $this->repository = $this->mock(DatabaseRepository::class);
     }
@@ -43,7 +43,7 @@ class DatabaseManagementServiceTest extends IntegrationTestCase
      */
     public function testExceptionIsThrownIfClientDatabasesAreNotEnabled()
     {
-        config()->set('pterodactyl.client_features.databases.enabled', false);
+        config()->set('phoenixpanel.client_features.databases.enabled', false);
 
         $this->expectException(DatabaseClientFeatureNotEnabledException::class);
 

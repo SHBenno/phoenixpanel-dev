@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Facades;
+namespace PhoenixPanel\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Pterodactyl\Services\Activity\ActivityLogService;
+use PhoenixPanel\Services\Activity\ActivityLogService;
 
 class Activity extends Facade
 {

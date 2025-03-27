@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers;
+namespace PhoenixPanel\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

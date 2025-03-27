@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Events\User;
+namespace PhoenixPanel\Events\User;
 
-use Pterodactyl\Models\User;
-use Pterodactyl\Events\Event;
+use PhoenixPanel\Models\User;
+use PhoenixPanel\Events\Event;
 use Illuminate\Queue\SerializesModels;
 
 class Deleted extends Event

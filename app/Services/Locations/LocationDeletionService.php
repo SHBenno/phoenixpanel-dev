@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Services\Locations;
+namespace PhoenixPanel\Services\Locations;
 
 use Webmozart\Assert\Assert;
-use Pterodactyl\Models\Location;
-use Pterodactyl\Contracts\Repository\NodeRepositoryInterface;
-use Pterodactyl\Contracts\Repository\LocationRepositoryInterface;
-use Pterodactyl\Exceptions\Service\Location\HasActiveNodesException;
+use PhoenixPanel\Models\Location;
+use PhoenixPanel\Contracts\Repository\NodeRepositoryInterface;
+use PhoenixPanel\Contracts\Repository\LocationRepositoryInterface;
+use PhoenixPanel\Exceptions\Service\Location\HasActiveNodesException;
 
 class LocationDeletionService
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Pterodactyl\Repositories\Eloquent;
+namespace PhoenixPanel\Repositories\Eloquent;
 
-use Pterodactyl\Models\Allocation;
+use PhoenixPanel\Models\Allocation;
 use Illuminate\Database\Eloquent\Builder;
-use Pterodactyl\Contracts\Repository\AllocationRepositoryInterface;
+use PhoenixPanel\Contracts\Repository\AllocationRepositoryInterface;
 
 class AllocationRepository extends EloquentRepository implements AllocationRepositoryInterface
 {

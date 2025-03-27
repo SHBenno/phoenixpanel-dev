@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Models;
+namespace PhoenixPanel\Models;
 
 use Illuminate\Container\Container;
 use Znck\Eloquent\Traits\BelongsToThrough;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Pterodactyl\Contracts\Extensions\HashidsInterface;
+use PhoenixPanel\Contracts\Extensions\HashidsInterface;
 
 /**
  * @property int $id
@@ -36,7 +36,7 @@ class Task extends Model
     public const RESOURCE_NAME = 'schedule_task';
 
     /**
-     * The default actions that can exist for a task in Pterodactyl.
+     * The default actions that can exist for a task in PhoenixPanel.
      */
     public const ACTION_POWER = 'power';
     public const ACTION_COMMAND = 'command';

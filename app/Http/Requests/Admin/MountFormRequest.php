@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Admin;
+namespace PhoenixPanel\Http\Requests\Admin;
 
-use Pterodactyl\Models\Mount;
+use PhoenixPanel\Models\Mount;
 
 class MountFormRequest extends AdminFormRequest
 {

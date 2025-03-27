@@ -1,16 +1,16 @@
 <?php
 
-namespace Pterodactyl\Notifications;
+namespace PhoenixPanel\Notifications;
 
-use Pterodactyl\Models\User;
+use PhoenixPanel\Models\User;
 use Illuminate\Bus\Queueable;
-use Pterodactyl\Events\Event;
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Events\Event;
+use PhoenixPanel\Models\Server;
 use Illuminate\Container\Container;
-use Pterodactyl\Events\Server\Installed;
+use PhoenixPanel\Events\Server\Installed;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Pterodactyl\Contracts\Core\ReceivesEvents;
+use PhoenixPanel\Contracts\Core\ReceivesEvents;
 use Illuminate\Contracts\Notifications\Dispatcher;
 use Illuminate\Notifications\Messages\MailMessage;
 

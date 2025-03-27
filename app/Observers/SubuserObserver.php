@@ -1,11 +1,11 @@
 <?php
 
-namespace Pterodactyl\Observers;
+namespace PhoenixPanel\Observers;
 
-use Pterodactyl\Events;
-use Pterodactyl\Models\Subuser;
-use Pterodactyl\Notifications\AddedToServer;
-use Pterodactyl\Notifications\RemovedFromServer;
+use PhoenixPanel\Events;
+use PhoenixPanel\Models\Subuser;
+use PhoenixPanel\Notifications\AddedToServer;
+use PhoenixPanel\Notifications\RemovedFromServer;
 
 class SubuserObserver
 {

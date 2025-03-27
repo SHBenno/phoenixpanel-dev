@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Api\Application\Nodes;
+namespace PhoenixPanel\Http\Requests\Api\Application\Nodes;
 
 class GetDeployableNodesRequest extends GetNodesRequest
 {

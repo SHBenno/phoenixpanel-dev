@@ -1,38 +1,38 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin;
+namespace PhoenixPanel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Pterodactyl\Models\User;
+use PhoenixPanel\Models\User;
 use Illuminate\Http\Response;
-use Pterodactyl\Models\Mount;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Database;
-use Pterodactyl\Models\MountServer;
+use PhoenixPanel\Models\Mount;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Database;
+use PhoenixPanel\Models\MountServer;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
-use Pterodactyl\Exceptions\DisplayException;
-use Pterodactyl\Http\Controllers\Controller;
+use PhoenixPanel\Exceptions\DisplayException;
+use PhoenixPanel\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
-use Pterodactyl\Services\Servers\SuspensionService;
-use Pterodactyl\Repositories\Eloquent\MountRepository;
-use Pterodactyl\Services\Servers\ServerDeletionService;
-use Pterodactyl\Services\Servers\ReinstallServerService;
-use Pterodactyl\Exceptions\Model\DataValidationException;
-use Pterodactyl\Repositories\Wings\DaemonServerRepository;
-use Pterodactyl\Services\Servers\BuildModificationService;
-use Pterodactyl\Services\Databases\DatabasePasswordService;
-use Pterodactyl\Services\Servers\DetailsModificationService;
-use Pterodactyl\Services\Servers\StartupModificationService;
-use Pterodactyl\Contracts\Repository\NestRepositoryInterface;
-use Pterodactyl\Repositories\Eloquent\DatabaseHostRepository;
-use Pterodactyl\Services\Databases\DatabaseManagementService;
+use PhoenixPanel\Services\Servers\SuspensionService;
+use PhoenixPanel\Repositories\Eloquent\MountRepository;
+use PhoenixPanel\Services\Servers\ServerDeletionService;
+use PhoenixPanel\Services\Servers\ReinstallServerService;
+use PhoenixPanel\Exceptions\Model\DataValidationException;
+use PhoenixPanel\Repositories\Wings\DaemonServerRepository;
+use PhoenixPanel\Services\Servers\BuildModificationService;
+use PhoenixPanel\Services\Databases\DatabasePasswordService;
+use PhoenixPanel\Services\Servers\DetailsModificationService;
+use PhoenixPanel\Services\Servers\StartupModificationService;
+use PhoenixPanel\Contracts\Repository\NestRepositoryInterface;
+use PhoenixPanel\Repositories\Eloquent\DatabaseHostRepository;
+use PhoenixPanel\Services\Databases\DatabaseManagementService;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
-use Pterodactyl\Contracts\Repository\ServerRepositoryInterface;
-use Pterodactyl\Contracts\Repository\DatabaseRepositoryInterface;
-use Pterodactyl\Contracts\Repository\AllocationRepositoryInterface;
-use Pterodactyl\Services\Servers\ServerConfigurationStructureService;
-use Pterodactyl\Http\Requests\Admin\Servers\Databases\StoreServerDatabaseRequest;
+use PhoenixPanel\Contracts\Repository\ServerRepositoryInterface;
+use PhoenixPanel\Contracts\Repository\DatabaseRepositoryInterface;
+use PhoenixPanel\Contracts\Repository\AllocationRepositoryInterface;
+use PhoenixPanel\Services\Servers\ServerConfigurationStructureService;
+use PhoenixPanel\Http\Requests\Admin\Servers\Databases\StoreServerDatabaseRequest;
 
 class ServersController extends Controller
 {
@@ -65,7 +65,7 @@ class ServersController extends Controller
      * Update the details for a server.
      *
      * @throws DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function setDetails(Request $request, Server $server): RedirectResponse
     {
@@ -83,7 +83,7 @@ class ServersController extends Controller
      *
      * @throws DisplayException
      * @throws DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function toggleInstall(Server $server): RedirectResponse
     {
@@ -105,7 +105,7 @@ class ServersController extends Controller
      *
      * @throws DisplayException
      * @throws DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function reinstallServer(Server $server): RedirectResponse
     {
@@ -120,7 +120,7 @@ class ServersController extends Controller
      *
      * @throws DisplayException
      * @throws DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function manageSuspension(Request $request, Server $server): RedirectResponse
     {
@@ -136,7 +136,7 @@ class ServersController extends Controller
      * Update the build configuration for a server.
      *
      * @throws DisplayException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      * @throws ValidationException
      */
     public function updateBuild(Request $request, Server $server): RedirectResponse

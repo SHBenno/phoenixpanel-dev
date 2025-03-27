@@ -1,18 +1,18 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Services\Backups;
+namespace PhoenixPanel\Tests\Integration\Services\Backups;
 
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Pterodactyl\Models\Backup;
+use PhoenixPanel\Models\Backup;
 use GuzzleHttp\Exception\ClientException;
-use Pterodactyl\Extensions\Backups\BackupManager;
-use Pterodactyl\Extensions\Filesystem\S3Filesystem;
-use Pterodactyl\Services\Backups\DeleteBackupService;
-use Pterodactyl\Tests\Integration\IntegrationTestCase;
-use Pterodactyl\Repositories\Wings\DaemonBackupRepository;
-use Pterodactyl\Exceptions\Service\Backup\BackupLockedException;
-use Pterodactyl\Exceptions\Http\Connection\DaemonConnectionException;
+use PhoenixPanel\Extensions\Backups\BackupManager;
+use PhoenixPanel\Extensions\Filesystem\S3Filesystem;
+use PhoenixPanel\Services\Backups\DeleteBackupService;
+use PhoenixPanel\Tests\Integration\IntegrationTestCase;
+use PhoenixPanel\Repositories\Wings\DaemonBackupRepository;
+use PhoenixPanel\Exceptions\Service\Backup\BackupLockedException;
+use PhoenixPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class DeleteBackupServiceTest extends IntegrationTestCase
 {

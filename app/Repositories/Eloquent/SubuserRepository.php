@@ -1,10 +1,10 @@
 <?php
 
-namespace Pterodactyl\Repositories\Eloquent;
+namespace PhoenixPanel\Repositories\Eloquent;
 
-use Pterodactyl\Models\Subuser;
-use Pterodactyl\Exceptions\Repository\RecordNotFoundException;
-use Pterodactyl\Contracts\Repository\SubuserRepositoryInterface;
+use PhoenixPanel\Models\Subuser;
+use PhoenixPanel\Exceptions\Repository\RecordNotFoundException;
+use PhoenixPanel\Contracts\Repository\SubuserRepositoryInterface;
 
 class SubuserRepository extends EloquentRepository implements SubuserRepositoryInterface
 {

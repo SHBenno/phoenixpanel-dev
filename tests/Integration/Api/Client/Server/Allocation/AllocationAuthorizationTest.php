@@ -1,10 +1,10 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Api\Client\Server\Allocation;
+namespace PhoenixPanel\Tests\Integration\Api\Client\Server\Allocation;
 
-use Pterodactyl\Models\Subuser;
-use Pterodactyl\Models\Allocation;
-use Pterodactyl\Tests\Integration\Api\Client\ClientApiIntegrationTestCase;
+use PhoenixPanel\Models\Subuser;
+use PhoenixPanel\Models\Allocation;
+use PhoenixPanel\Tests\Integration\Api\Client\ClientApiIntegrationTestCase;
 
 class AllocationAuthorizationTest extends ClientApiIntegrationTestCase
 {

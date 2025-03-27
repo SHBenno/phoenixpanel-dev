@@ -1,20 +1,20 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Jobs\Schedule;
+namespace PhoenixPanel\Tests\Integration\Jobs\Schedule;
 
 use Carbon\Carbon;
 use Carbon\CarbonImmutable;
 use GuzzleHttp\Psr7\Request;
-use Pterodactyl\Models\Task;
+use PhoenixPanel\Models\Task;
 use GuzzleHttp\Psr7\Response;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Schedule;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Schedule;
 use Illuminate\Support\Facades\Bus;
-use Pterodactyl\Jobs\Schedule\RunTaskJob;
+use PhoenixPanel\Jobs\Schedule\RunTaskJob;
 use GuzzleHttp\Exception\BadResponseException;
-use Pterodactyl\Tests\Integration\IntegrationTestCase;
-use Pterodactyl\Repositories\Wings\DaemonPowerRepository;
-use Pterodactyl\Exceptions\Http\Connection\DaemonConnectionException;
+use PhoenixPanel\Tests\Integration\IntegrationTestCase;
+use PhoenixPanel\Repositories\Wings\DaemonPowerRepository;
+use PhoenixPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class RunTaskJobTest extends IntegrationTestCase
 {
@@ -144,7 +144,7 @@ class RunTaskJobTest extends IntegrationTestCase
     /**
      * Test that a schedule is not executed if the server is suspended.
      *
-     * @see https://github.com/pterodactyl/panel/issues/4008
+     * @see https://github.com/phoenixpanel/panel/issues/4008
      */
     public function testTaskIsNotRunIfServerIsSuspended()
     {

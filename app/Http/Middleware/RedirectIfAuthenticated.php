@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Middleware;
+namespace PhoenixPanel\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Auth\AuthManager;

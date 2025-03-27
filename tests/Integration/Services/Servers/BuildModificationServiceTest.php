@@ -1,18 +1,18 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Services\Servers;
+namespace PhoenixPanel\Tests\Integration\Services\Servers;
 
 use Mockery\MockInterface;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Allocation;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Allocation;
 use GuzzleHttp\Exception\RequestException;
-use Pterodactyl\Exceptions\DisplayException;
-use Pterodactyl\Tests\Integration\IntegrationTestCase;
-use Pterodactyl\Repositories\Wings\DaemonServerRepository;
-use Pterodactyl\Services\Servers\BuildModificationService;
-use Pterodactyl\Exceptions\Http\Connection\DaemonConnectionException;
+use PhoenixPanel\Exceptions\DisplayException;
+use PhoenixPanel\Tests\Integration\IntegrationTestCase;
+use PhoenixPanel\Repositories\Wings\DaemonServerRepository;
+use PhoenixPanel\Services\Servers\BuildModificationService;
+use PhoenixPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class BuildModificationServiceTest extends IntegrationTestCase
 {
@@ -37,7 +37,7 @@ class BuildModificationServiceTest extends IntegrationTestCase
         $server = $this->createServerModel();
         $server2 = $this->createServerModel();
 
-        /** @var \Pterodactyl\Models\Allocation[] $allocations */
+        /** @var \PhoenixPanel\Models\Allocation[] $allocations */
         $allocations = Allocation::factory()->times(4)->create(['node_id' => $server->node_id, 'notes' => 'Random notes']);
 
         $initialAllocationId = $server->allocation_id;
@@ -84,7 +84,7 @@ class BuildModificationServiceTest extends IntegrationTestCase
     public function testExceptionIsThrownIfRemovingTheDefaultAllocation()
     {
         $server = $this->createServerModel();
-        /** @var \Pterodactyl\Models\Allocation[] $allocations */
+        /** @var \PhoenixPanel\Models\Allocation[] $allocations */
         $allocations = Allocation::factory()->times(4)->create(['node_id' => $server->node_id]);
 
         $allocations[0]->update(['server_id' => $server->id]);

@@ -1,14 +1,14 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Api\Application\Servers;
+namespace PhoenixPanel\Http\Controllers\Api\Application\Servers;
 
-use Pterodactyl\Models\Server;
-use Pterodactyl\Services\Servers\BuildModificationService;
-use Pterodactyl\Services\Servers\DetailsModificationService;
-use Pterodactyl\Transformers\Api\Application\ServerTransformer;
-use Pterodactyl\Http\Controllers\Api\Application\ApplicationApiController;
-use Pterodactyl\Http\Requests\Api\Application\Servers\UpdateServerDetailsRequest;
-use Pterodactyl\Http\Requests\Api\Application\Servers\UpdateServerBuildConfigurationRequest;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Services\Servers\BuildModificationService;
+use PhoenixPanel\Services\Servers\DetailsModificationService;
+use PhoenixPanel\Transformers\Api\Application\ServerTransformer;
+use PhoenixPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use PhoenixPanel\Http\Requests\Api\Application\Servers\UpdateServerDetailsRequest;
+use PhoenixPanel\Http\Requests\Api\Application\Servers\UpdateServerBuildConfigurationRequest;
 
 class ServerDetailsController extends ApplicationApiController
 {
@@ -25,9 +25,9 @@ class ServerDetailsController extends ApplicationApiController
     /**
      * Update the details for a specific server.
      *
-     * @throws \Pterodactyl\Exceptions\DisplayException
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\DisplayException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function details(UpdateServerDetailsRequest $request, Server $server): array
     {
@@ -44,9 +44,9 @@ class ServerDetailsController extends ApplicationApiController
     /**
      * Update the build details for a specific server.
      *
-     * @throws \Pterodactyl\Exceptions\DisplayException
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\DisplayException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function build(UpdateServerBuildConfigurationRequest $request, Server $server): array
     {

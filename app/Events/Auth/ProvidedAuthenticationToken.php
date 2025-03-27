@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Events\Auth;
+namespace PhoenixPanel\Events\Auth;
 
-use Pterodactyl\Models\User;
-use Pterodactyl\Events\Event;
+use PhoenixPanel\Models\User;
+use PhoenixPanel\Events\Event;
 
 class ProvidedAuthenticationToken extends Event
 {

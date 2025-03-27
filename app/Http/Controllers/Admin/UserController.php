@@ -1,26 +1,26 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin;
+namespace PhoenixPanel\Http\Controllers\Admin;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use Pterodactyl\Models\User;
-use Pterodactyl\Models\Model;
+use PhoenixPanel\Models\User;
+use PhoenixPanel\Models\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Spatie\QueryBuilder\QueryBuilder;
 use Illuminate\View\Factory as ViewFactory;
-use Pterodactyl\Exceptions\DisplayException;
-use Pterodactyl\Http\Controllers\Controller;
+use PhoenixPanel\Exceptions\DisplayException;
+use PhoenixPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\Translation\Translator;
-use Pterodactyl\Services\Users\UserUpdateService;
-use Pterodactyl\Traits\Helpers\AvailableLanguages;
-use Pterodactyl\Services\Users\UserCreationService;
-use Pterodactyl\Services\Users\UserDeletionService;
-use Pterodactyl\Http\Requests\Admin\UserFormRequest;
-use Pterodactyl\Http\Requests\Admin\NewUserFormRequest;
-use Pterodactyl\Contracts\Repository\UserRepositoryInterface;
+use PhoenixPanel\Services\Users\UserUpdateService;
+use PhoenixPanel\Traits\Helpers\AvailableLanguages;
+use PhoenixPanel\Services\Users\UserCreationService;
+use PhoenixPanel\Services\Users\UserDeletionService;
+use PhoenixPanel\Http\Requests\Admin\UserFormRequest;
+use PhoenixPanel\Http\Requests\Admin\NewUserFormRequest;
+use PhoenixPanel\Contracts\Repository\UserRepositoryInterface;
 
 class UserController extends Controller
 {
@@ -115,8 +115,8 @@ class UserController extends Controller
     /**
      * Update a user on the system.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UserFormRequest $request, User $user): RedirectResponse
     {

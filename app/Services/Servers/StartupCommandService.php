@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Services\Servers;
+namespace PhoenixPanel\Services\Servers;
 
-use Pterodactyl\Models\Server;
+use PhoenixPanel\Models\Server;
 
 class StartupCommandService
 {

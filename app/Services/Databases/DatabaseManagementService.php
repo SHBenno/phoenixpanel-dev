@@ -1,18 +1,18 @@
 <?php
 
-namespace Pterodactyl\Services\Databases;
+namespace PhoenixPanel\Services\Databases;
 
 use Exception;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Database;
-use Pterodactyl\Helpers\Utilities;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Database;
+use PhoenixPanel\Helpers\Utilities;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Encryption\Encrypter;
-use Pterodactyl\Extensions\DynamicDatabaseConnection;
-use Pterodactyl\Repositories\Eloquent\DatabaseRepository;
-use Pterodactyl\Exceptions\Repository\DuplicateDatabaseNameException;
-use Pterodactyl\Exceptions\Service\Database\TooManyDatabasesException;
-use Pterodactyl\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException;
+use PhoenixPanel\Extensions\DynamicDatabaseConnection;
+use PhoenixPanel\Repositories\Eloquent\DatabaseRepository;
+use PhoenixPanel\Exceptions\Repository\DuplicateDatabaseNameException;
+use PhoenixPanel\Exceptions\Service\Database\TooManyDatabasesException;
+use PhoenixPanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException;
 
 class DatabaseManagementService
 {
@@ -20,7 +20,7 @@ class DatabaseManagementService
      * The regex used to validate that the database name passed through to the function is
      * in the expected format.
      *
-     * @see \Pterodactyl\Services\Databases\DatabaseManagementService::generateUniqueDatabaseName()
+     * @see \PhoenixPanel\Services\Databases\DatabaseManagementService::generateUniqueDatabaseName()
      */
     private const MATCH_NAME_REGEX = '/^(s[\d]+_)(.*)$/';
 
@@ -71,7 +71,7 @@ class DatabaseManagementService
      */
     public function create(Server $server, array $data): Database
     {
-        if (!config('pterodactyl.client_features.databases.enabled')) {
+        if (!config('phoenixpanel.client_features.databases.enabled')) {
             throw new DatabaseClientFeatureNotEnabledException();
         }
 

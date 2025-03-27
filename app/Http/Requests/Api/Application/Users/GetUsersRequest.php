@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Api\Application\Users;
+namespace PhoenixPanel\Http\Requests\Api\Application\Users;
 
-use Pterodactyl\Services\Acl\Api\AdminAcl as Acl;
-use Pterodactyl\Http\Requests\Api\Application\ApplicationApiRequest;
+use PhoenixPanel\Services\Acl\Api\AdminAcl as Acl;
+use PhoenixPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class GetUsersRequest extends ApplicationApiRequest
 {

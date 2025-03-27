@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Exceptions\Repository;
+namespace PhoenixPanel\Exceptions\Repository;
 
-use Pterodactyl\Exceptions\PterodactylException;
+use PhoenixPanel\Exceptions\PhoenixPanelException;
 
-class RepositoryException extends PterodactylException
+class RepositoryException extends PhoenixPanelException
 {
 }

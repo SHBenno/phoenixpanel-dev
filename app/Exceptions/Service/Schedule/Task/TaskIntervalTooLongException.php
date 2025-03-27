@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Exceptions\Service\Schedule\Task;
+namespace PhoenixPanel\Exceptions\Service\Schedule\Task;
 
-use Pterodactyl\Exceptions\DisplayException;
+use PhoenixPanel\Exceptions\DisplayException;
 
 class TaskIntervalTooLongException extends DisplayException
 {

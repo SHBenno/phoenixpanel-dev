@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Extensions\Facades;
+namespace PhoenixPanel\Extensions\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

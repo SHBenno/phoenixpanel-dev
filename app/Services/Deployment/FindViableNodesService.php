@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Services\Deployment;
+namespace PhoenixPanel\Services\Deployment;
 
-use Pterodactyl\Models\Node;
+use PhoenixPanel\Models\Node;
 use Webmozart\Assert\Assert;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Pterodactyl\Exceptions\Service\Deployment\NoViableNodeException;
+use PhoenixPanel\Exceptions\Service\Deployment\NoViableNodeException;
 
 class FindViableNodesService
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Pterodactyl\Exceptions\Service\Database;
+namespace PhoenixPanel\Exceptions\Service\Database;
 
-use Pterodactyl\Exceptions\PterodactylException;
+use PhoenixPanel\Exceptions\PhoenixPanelException;
 
-class DatabaseClientFeatureNotEnabledException extends PterodactylException
+class DatabaseClientFeatureNotEnabledException extends PhoenixPanelException
 {
     public function __construct()
     {

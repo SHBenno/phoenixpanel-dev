@@ -1,22 +1,22 @@
 <?php
 
-namespace Pterodactyl\Services\Telemetry;
+namespace PhoenixPanel\Services\Telemetry;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Arr;
-use Pterodactyl\Models\Egg;
-use Pterodactyl\Models\Nest;
-use Pterodactyl\Models\Node;
-use Pterodactyl\Models\User;
-use Pterodactyl\Models\Mount;
-use Pterodactyl\Models\Backup;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Location;
+use PhoenixPanel\Models\Egg;
+use PhoenixPanel\Models\Nest;
+use PhoenixPanel\Models\Node;
+use PhoenixPanel\Models\User;
+use PhoenixPanel\Models\Mount;
+use PhoenixPanel\Models\Backup;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Location;
 use Illuminate\Support\Facades\DB;
-use Pterodactyl\Models\Allocation;
+use PhoenixPanel\Models\Allocation;
 use Illuminate\Support\Facades\Http;
-use Pterodactyl\Repositories\Eloquent\SettingsRepository;
-use Pterodactyl\Repositories\Wings\DaemonConfigurationRepository;
+use PhoenixPanel\Repositories\Eloquent\SettingsRepository;
+use PhoenixPanel\Repositories\Wings\DaemonConfigurationRepository;
 
 class TelemetryCollectionService
 {
@@ -30,7 +30,7 @@ class TelemetryCollectionService
     }
 
     /**
-     * Collects telemetry data and sends it to the Pterodactyl Telemetry Service.
+     * Collects telemetry data and sends it to the PhoenixPanel Telemetry Service.
      */
     public function __invoke(): void
     {
@@ -40,13 +40,13 @@ class TelemetryCollectionService
             return;
         }
 
-        Http::post('https://telemetry.pterodactyl.io', $data);
+        Http::post('https://telemetry.phoenixpanel.io', $data);
     }
 
     /**
      * Collects telemetry data and returns it as an array.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
      */
     public function collect(): array
     {

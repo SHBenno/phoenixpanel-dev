@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Exceptions\Service\Subuser;
+namespace PhoenixPanel\Exceptions\Service\Subuser;
 
-use Pterodactyl\Exceptions\DisplayException;
+use PhoenixPanel\Exceptions\DisplayException;
 
 class ServerSubuserExistsException extends DisplayException
 {

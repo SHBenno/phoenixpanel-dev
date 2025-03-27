@@ -1,11 +1,11 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Api\Application\Users;
+namespace PhoenixPanel\Http\Controllers\Api\Application\Users;
 
-use Pterodactyl\Models\User;
-use Pterodactyl\Transformers\Api\Application\UserTransformer;
-use Pterodactyl\Http\Controllers\Api\Application\ApplicationApiController;
-use Pterodactyl\Http\Requests\Api\Application\Users\GetExternalUserRequest;
+use PhoenixPanel\Models\User;
+use PhoenixPanel\Transformers\Api\Application\UserTransformer;
+use PhoenixPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use PhoenixPanel\Http\Requests\Api\Application\Users\GetExternalUserRequest;
 
 class ExternalUserController extends ApplicationApiController
 {

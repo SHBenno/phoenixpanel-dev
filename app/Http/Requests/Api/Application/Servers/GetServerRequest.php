@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Api\Application\Servers;
+namespace PhoenixPanel\Http\Requests\Api\Application\Servers;
 
-use Pterodactyl\Services\Acl\Api\AdminAcl;
-use Pterodactyl\Http\Requests\Api\Application\ApplicationApiRequest;
+use PhoenixPanel\Services\Acl\Api\AdminAcl;
+use PhoenixPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class GetServerRequest extends ApplicationApiRequest
 {

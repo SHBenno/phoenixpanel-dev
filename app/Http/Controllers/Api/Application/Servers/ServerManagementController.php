@@ -1,13 +1,13 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Api\Application\Servers;
+namespace PhoenixPanel\Http\Controllers\Api\Application\Servers;
 
 use Illuminate\Http\Response;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Services\Servers\SuspensionService;
-use Pterodactyl\Services\Servers\ReinstallServerService;
-use Pterodactyl\Http\Requests\Api\Application\Servers\ServerWriteRequest;
-use Pterodactyl\Http\Controllers\Api\Application\ApplicationApiController;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Services\Servers\SuspensionService;
+use PhoenixPanel\Services\Servers\ReinstallServerService;
+use PhoenixPanel\Http\Requests\Api\Application\Servers\ServerWriteRequest;
+use PhoenixPanel\Http\Controllers\Api\Application\ApplicationApiController;
 
 class ServerManagementController extends ApplicationApiController
 {
@@ -48,9 +48,9 @@ class ServerManagementController extends ApplicationApiController
     /**
      * Mark a server as needing to be reinstalled.
      *
-     * @throws \Pterodactyl\Exceptions\DisplayException
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \PhoenixPanel\Exceptions\DisplayException
+     * @throws \PhoenixPanel\Exceptions\Model\DataValidationException
+     * @throws \PhoenixPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function reinstall(ServerWriteRequest $request, Server $server): Response
     {

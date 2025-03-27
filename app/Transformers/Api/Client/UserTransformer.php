@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Transformers\Api\Client;
+namespace PhoenixPanel\Transformers\Api\Client;
 
 use Illuminate\Support\Str;
-use Pterodactyl\Models\User;
+use PhoenixPanel\Models\User;
 
 class UserTransformer extends BaseClientTransformer
 {

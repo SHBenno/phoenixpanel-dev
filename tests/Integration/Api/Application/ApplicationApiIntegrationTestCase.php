@@ -1,18 +1,18 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Api\Application;
+namespace PhoenixPanel\Tests\Integration\Api\Application;
 
 use Illuminate\Http\Request;
-use Pterodactyl\Models\User;
+use PhoenixPanel\Models\User;
 use PHPUnit\Framework\Assert;
-use Pterodactyl\Models\ApiKey;
-use Pterodactyl\Services\Acl\Api\AdminAcl;
-use Pterodactyl\Tests\Integration\IntegrationTestCase;
+use PhoenixPanel\Models\ApiKey;
+use PhoenixPanel\Services\Acl\Api\AdminAcl;
+use PhoenixPanel\Tests\Integration\IntegrationTestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Pterodactyl\Tests\Traits\Integration\CreatesTestModels;
-use Pterodactyl\Transformers\Api\Application\BaseTransformer;
-use Pterodactyl\Transformers\Api\Client\BaseClientTransformer;
-use Pterodactyl\Tests\Traits\Http\IntegrationJsonRequestAssertions;
+use PhoenixPanel\Tests\Traits\Integration\CreatesTestModels;
+use PhoenixPanel\Transformers\Api\Application\BaseTransformer;
+use PhoenixPanel\Transformers\Api\Client\BaseClientTransformer;
+use PhoenixPanel\Tests\Traits\Http\IntegrationJsonRequestAssertions;
 
 abstract class ApplicationApiIntegrationTestCase extends IntegrationTestCase
 {
@@ -36,7 +36,7 @@ abstract class ApplicationApiIntegrationTestCase extends IntegrationTestCase
         $this->key = $this->createApiKey($this->user);
 
         $this
-            ->withHeader('Accept', 'application/vnd.pterodactyl.v1+json')
+            ->withHeader('Accept', 'application/vnd.phoenixpanel.v1+json')
             ->withHeader('Authorization', 'Bearer ' . $this->key->identifier . decrypt($this->key->token));
     }
 

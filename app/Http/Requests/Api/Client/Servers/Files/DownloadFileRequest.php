@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Api\Client\Servers\Files;
+namespace PhoenixPanel\Http\Requests\Api\Client\Servers\Files;
 
-use Pterodactyl\Models\Server;
-use Pterodactyl\Http\Requests\Api\Client\ClientApiRequest;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Http\Requests\Api\Client\ClientApiRequest;
 
 class DownloadFileRequest extends ClientApiRequest
 {

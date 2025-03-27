@@ -1,19 +1,19 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Api\Application\Servers;
+namespace PhoenixPanel\Http\Controllers\Api\Application\Servers;
 
 use Illuminate\Http\Response;
-use Pterodactyl\Models\Server;
-use Pterodactyl\Models\Database;
+use PhoenixPanel\Models\Server;
+use PhoenixPanel\Models\Database;
 use Illuminate\Http\JsonResponse;
-use Pterodactyl\Services\Databases\DatabasePasswordService;
-use Pterodactyl\Services\Databases\DatabaseManagementService;
-use Pterodactyl\Transformers\Api\Application\ServerDatabaseTransformer;
-use Pterodactyl\Http\Controllers\Api\Application\ApplicationApiController;
-use Pterodactyl\Http\Requests\Api\Application\Servers\Databases\GetServerDatabaseRequest;
-use Pterodactyl\Http\Requests\Api\Application\Servers\Databases\GetServerDatabasesRequest;
-use Pterodactyl\Http\Requests\Api\Application\Servers\Databases\ServerDatabaseWriteRequest;
-use Pterodactyl\Http\Requests\Api\Application\Servers\Databases\StoreServerDatabaseRequest;
+use PhoenixPanel\Services\Databases\DatabasePasswordService;
+use PhoenixPanel\Services\Databases\DatabaseManagementService;
+use PhoenixPanel\Transformers\Api\Application\ServerDatabaseTransformer;
+use PhoenixPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use PhoenixPanel\Http\Requests\Api\Application\Servers\Databases\GetServerDatabaseRequest;
+use PhoenixPanel\Http\Requests\Api\Application\Servers\Databases\GetServerDatabasesRequest;
+use PhoenixPanel\Http\Requests\Api\Application\Servers\Databases\ServerDatabaseWriteRequest;
+use PhoenixPanel\Http\Requests\Api\Application\Servers\Databases\StoreServerDatabaseRequest;
 
 class DatabaseController extends ApplicationApiController
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Services\Users;
+namespace PhoenixPanel\Services\Users;
 
-use Pterodactyl\Models\User;
-use Pterodactyl\Exceptions\DisplayException;
+use PhoenixPanel\Models\User;
+use PhoenixPanel\Exceptions\DisplayException;
 use Illuminate\Contracts\Translation\Translator;
-use Pterodactyl\Contracts\Repository\UserRepositoryInterface;
-use Pterodactyl\Contracts\Repository\ServerRepositoryInterface;
+use PhoenixPanel\Contracts\Repository\UserRepositoryInterface;
+use PhoenixPanel\Contracts\Repository\ServerRepositoryInterface;
 
 class UserDeletionService
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Pterodactyl\Services\Eggs\Sharing;
+namespace PhoenixPanel\Services\Eggs\Sharing;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Arr;
-use Pterodactyl\Models\Egg;
-use Pterodactyl\Models\Nest;
+use PhoenixPanel\Models\Egg;
+use PhoenixPanel\Models\Nest;
 use Illuminate\Http\UploadedFile;
-use Pterodactyl\Models\EggVariable;
+use PhoenixPanel\Models\EggVariable;
 use Illuminate\Database\ConnectionInterface;
-use Pterodactyl\Services\Eggs\EggParserService;
+use PhoenixPanel\Services\Eggs\EggParserService;
 
 class EggImporterService
 {
@@ -20,7 +20,7 @@ class EggImporterService
     /**
      * Take an uploaded JSON file and parse it into a new egg.
      *
-     * @throws \Pterodactyl\Exceptions\Service\InvalidFileUploadException|\Throwable
+     * @throws \PhoenixPanel\Exceptions\Service\InvalidFileUploadException|\Throwable
      */
     public function handle(UploadedFile $file, int $nest): Egg
     {

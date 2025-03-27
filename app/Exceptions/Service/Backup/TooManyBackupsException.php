@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Exceptions\Service\Backup;
+namespace PhoenixPanel\Exceptions\Service\Backup;
 
-use Pterodactyl\Exceptions\DisplayException;
+use PhoenixPanel\Exceptions\DisplayException;
 
 class TooManyBackupsException extends DisplayException
 {

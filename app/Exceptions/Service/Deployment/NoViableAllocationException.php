@@ -1,8 +1,8 @@
 <?php
 
-namespace Pterodactyl\Exceptions\Service\Deployment;
+namespace PhoenixPanel\Exceptions\Service\Deployment;
 
-use Pterodactyl\Exceptions\DisplayException;
+use PhoenixPanel\Exceptions\DisplayException;
 
 class NoViableAllocationException extends DisplayException
 {

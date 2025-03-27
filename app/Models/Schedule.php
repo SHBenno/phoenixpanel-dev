@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Models;
+namespace PhoenixPanel\Models;
 
 use Cron\CronExpression;
 use Carbon\CarbonImmutable;
@@ -8,7 +8,7 @@ use Illuminate\Container\Container;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Pterodactyl\Contracts\Extensions\HashidsInterface;
+use PhoenixPanel\Contracts\Extensions\HashidsInterface;
 
 /**
  * @property int $id
@@ -28,7 +28,7 @@ use Pterodactyl\Contracts\Extensions\HashidsInterface;
  * @property \Carbon\Carbon $updated_at
  * @property string $hashid
  * @property Server $server
- * @property \Pterodactyl\Models\Task[]|\Illuminate\Support\Collection $tasks
+ * @property \PhoenixPanel\Models\Task[]|\Illuminate\Support\Collection $tasks
  */
 class Schedule extends Model
 {

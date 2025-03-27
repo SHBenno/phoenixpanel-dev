@@ -1,11 +1,11 @@
 <?php
 
-namespace Pterodactyl\Tests\Integration\Api\Client\Server\Schedule;
+namespace PhoenixPanel\Tests\Integration\Api\Client\Server\Schedule;
 
-use Pterodactyl\Models\Task;
-use Pterodactyl\Models\Schedule;
-use Pterodactyl\Models\Permission;
-use Pterodactyl\Tests\Integration\Api\Client\ClientApiIntegrationTestCase;
+use PhoenixPanel\Models\Task;
+use PhoenixPanel\Models\Schedule;
+use PhoenixPanel\Models\Permission;
+use PhoenixPanel\Tests\Integration\Api\Client\ClientApiIntegrationTestCase;
 
 class GetServerSchedulesTest extends ClientApiIntegrationTestCase
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Transformers\Api\Application;
+namespace PhoenixPanel\Transformers\Api\Application;
 
-use Pterodactyl\Models\Database;
+use PhoenixPanel\Models\Database;
 use League\Fractal\Resource\Item;
-use Pterodactyl\Models\DatabaseHost;
+use PhoenixPanel\Models\DatabaseHost;
 use League\Fractal\Resource\NullResource;
-use Pterodactyl\Services\Acl\Api\AdminAcl;
+use PhoenixPanel\Services\Acl\Api\AdminAcl;
 use Illuminate\Contracts\Encryption\Encrypter;
 
 class ServerDatabaseTransformer extends BaseTransformer
@@ -64,7 +64,7 @@ class ServerDatabaseTransformer extends BaseTransformer
     /**
      * Return the database host relationship for this server database.
      *
-     * @throws \Pterodactyl\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \PhoenixPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeHost(Database $model): Item|NullResource
     {

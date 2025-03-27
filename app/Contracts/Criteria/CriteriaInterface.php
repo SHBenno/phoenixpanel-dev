@@ -1,9 +1,9 @@
 <?php
 
-namespace Pterodactyl\Contracts\Criteria;
+namespace PhoenixPanel\Contracts\Criteria;
 
 use Illuminate\Database\Eloquent\Model;
-use Pterodactyl\Repositories\Repository;
+use PhoenixPanel\Repositories\Repository;
 
 interface CriteriaInterface
 {
