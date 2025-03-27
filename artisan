@@ -17,6 +17,19 @@ define('LARAVEL_START', microtime(true));
 
 require __DIR__ . '/vendor/autoload.php';
 
+// --- DEBUGGING START ---
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/');
+try {
+    $dotenv->load();
+} catch (Dotenv\Exception\InvalidPathException $e) {
+    echo "Error loading .env file: " . $e->getMessage() . "\n";
+}
+
+echo "APP_KEY from getenv(): " . getenv('APP_KEY') . "\n";
+echo "APP_KEY from $_ENV: " . ($_ENV['APP_KEY'] ?? 'Not set') . "\n";
+echo "APP_KEY from $_SERVER: " . ($_SERVER['APP_KEY'] ?? 'Not set') . "\n";
+// --- DEBUGGING END ---
+
 $app = require_once __DIR__ . '/bootstrap/app.php';
 
 /*
