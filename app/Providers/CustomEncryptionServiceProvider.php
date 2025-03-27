@@ -37,12 +37,15 @@ class CustomEncryptionServiceProvider extends ServiceProvider
                 // using the application's configured cipher.
                 try {
                     $cipher = config('app.cipher'); // Get cipher from config
-                    $tempKey = 'base64:'.base64_encode(Encrypter::generateKey($cipher));
-                    config(['app.key' => $tempKey]); // Set temporary key in config
+                    $rawKey = Encrypter::generateKey($cipher); // Generate raw binary key
+                    $base64Key = 'base64:'.base64_encode($rawKey); // Create base64 version for config
 
-                    // Explicitly register encrypter with the temporary key
-                    $this->app->singleton('encrypter', function ($app) use ($tempKey, $cipher) {
-                        return new Encrypter($tempKey, $cipher);
+                    config(['app.key' => $base64Key]); // Set base64 version in config
+
+                    // Explicitly register encrypter with the RAW temporary key
+                    $this->app->singleton('encrypter', function ($app) use ($rawKey, $cipher) {
+                        // Pass the raw binary key, not the base64 encoded string
+                        return new Encrypter($rawKey, $cipher);
                     });
 
                     // Optional: Log that a temporary key was generated for debugging
