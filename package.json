@@ -106,7 +106,8 @@
         "xterm-addon-search": "^0.9.0",
         "xterm-addon-search-bar": "^0.2.0",
         "xterm-addon-web-links": "^0.6.0",
-        "yup": "^0.29.1"
+        "yup": "^0.29.1",
+        "redux-devtools-extension": "^2.13.8"
     },
     "devDependencies": {
         "@testing-library/dom": "^8.14.0",
@@ -127,7 +128,6 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^28.1.1",
         "prettier": "^2.7.1",
-        "redux-devtools-extension": "^2.13.8",
         "ts-jest": "^28.0.5",
         "webpack-dev-server": "^3.11.0",
         "yarn-deduplicate": "^1.1.1"
