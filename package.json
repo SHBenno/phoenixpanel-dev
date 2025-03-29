@@ -52,7 +52,8 @@
         "xterm-addon-search": "^0.9.0",
         "xterm-addon-search-bar": "^0.2.0",
         "xterm-addon-web-links": "^0.6.0",
-        "yup": "^0.29.1"
+        "yup": "^0.29.1",
+        "cross-env": "^7.0.2"
     },
     "devDependencies": {
         "@babel/core": "^7.12.1",
@@ -95,7 +96,6 @@
         "babel-jest": "^28.1.1",
         "babel-loader": "^8.2.5",
         "babel-plugin-styled-components": "^2.0.7",
-        "cross-env": "^7.0.2",
         "css-loader": "^5.2.7",
         "eslint": "^8.18.0",
         "eslint-config-prettier": "^8.5.0",
