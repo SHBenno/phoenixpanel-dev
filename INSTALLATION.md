@@ -74,6 +74,11 @@ This guide will walk you through installing the PhoenixPanel web panel software 
 
 ## 3. Install Dependencies
 
+*   Copy the example environment file and generate the application key.
+    ```bash
+    cp .env.example .env
+    php artisan key:generate --force
+    ```
 *   Install PHP dependencies using Composer (run as your user).
     ```bash
     composer install --no-dev --optimize-autoloader
