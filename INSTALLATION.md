@@ -66,10 +66,10 @@ This guide will walk you through installing the PhoenixPanel web panel software 
     sudo chown $USER:$USER /var/www/phoenixpanel
     cd /var/www/phoenixpanel
     ```
-*   Clone the repository.
+*   Download and extract the panel files.
     ```bash
-    # Using the URL from README.md - confirm if this is correct for your version
-    git clone https://github.com/phoenixpanel/panel .
+    # Download the latest release archive
+    curl -L https://github.com/SHBenno/phoenixpanel-dev/archive/refs/tags/latest.tar.gz | sudo tar -xz --strip-components=1 -C /var/www/phoenixpanel
     ```
 
 ## 3. Install Dependencies
