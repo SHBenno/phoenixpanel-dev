@@ -91,10 +91,6 @@ This guide will walk you through installing the PhoenixPanel web panel software 
 
 ## 4. Configure Environment
 
-*   Copy the example environment file.
-    ```bash
-    cp .env.example .env
-    ```
 *   Edit the `.env` file using a text editor (e.g., `nano .env`):
     *   `APP_NAME="PhoenixPanel"`
     *   `APP_ENV=production`
@@ -113,10 +109,6 @@ This guide will walk you through installing the PhoenixPanel web panel software 
     *   `REDIS_PASSWORD=null` (Unless you configured one)
     *   `REDIS_PORT=6379`
     *   `MAIL_*`: Configure your mail driver settings (e.g., SMTP). Using a transactional email service like Mailgun or SendGrid is recommended.
-*   Generate the application encryption key.
-    ```bash
-    php artisan key:generate --force
-    ```
 
 ## 5. Database Setup
 
